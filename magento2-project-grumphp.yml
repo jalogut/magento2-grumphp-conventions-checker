@@ -20,7 +20,7 @@ parameters:
               - "exit;"
               - "console.log("
       phpcs:
-          standard: "%magento_dir%/vendor/jalogut/magento2-conventions-checker/rules/PHP/phpcs/ruleset.xml"
+          standard: "%magento_dir%/vendor/jalogut/magento2-grumphp-conventions-checker/rules/PHP/phpcs/ruleset.xml"
           tab_width: 4
           ignore_patterns: [%phpcs_excludes%]
       phpmd:
