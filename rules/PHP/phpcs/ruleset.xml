@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="JalogutMg2">
+    <description>Magento 2 Staempfli Standards</description>
+
+    <rule ref="../../../../../../dev/tests/static/framework/Magento">
+        <exclude name="Magento.NamingConventions.InterfaceName"/>
+    </rule>
+
+</ruleset>
