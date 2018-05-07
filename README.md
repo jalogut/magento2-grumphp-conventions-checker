@@ -4,9 +4,9 @@
 
 ```
 composer require --dev "jalogut/magento2-grumphp-conventions-checker:^2.2.0" \
-    "phpro/grumphp": "^0.14" \
-    "squizlabs/php_codesniffer": "~3.2.2" \
-    "phpmd/phpmd": "^2.6"
+    "phpro/grumphp:^0.14" \
+    "squizlabs/php_codesniffer:~3.2.2" \
+    "phpmd/phpmd:^2.6"
 ```
 
 ### Project
