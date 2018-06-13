@@ -2,11 +2,11 @@
 
 ## Installation
 
+### Project
+
 ```
 composer require --dev "jalogut/magento2-grumphp-conventions-checker:^2.2"
 ```
-
-### Project
 
 * Create `grumphp.yml` file in the root folder with the following content:
 
