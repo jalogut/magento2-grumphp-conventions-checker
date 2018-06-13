@@ -10,7 +10,7 @@
       "email": "juan.jalogut@gmail.com"
     }
   ],
-  "require-dev": {
+  "require": {
     "phpro/grumphp": "^0.14",
     "squizlabs/php_codesniffer": "~3.2.2",
     "phpmd/phpmd": "^2.6"
