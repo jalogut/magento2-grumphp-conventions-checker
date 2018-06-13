@@ -15,7 +15,7 @@ parameters:
     magento_dir: <magento_dir>
     vendor_dir: <vendor_dir>
 imports:
-    - { resource: %vendor_dir%/jalogut/magento2-grumphp-conventions-checker/magento2-project-grumphp.yml }
+    - { resource: <vendor_dir>/jalogut/magento2-grumphp-conventions-checker/magento2-project-grumphp.yml }
 ```
 
 * Add the following scripts in your `composer.json`
