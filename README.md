@@ -3,10 +3,7 @@
 ## Installation
 
 ```
-composer require --dev "jalogut/magento2-grumphp-conventions-checker:^2.2.0" \
-    "phpro/grumphp:^0.14" \
-    "squizlabs/php_codesniffer:~3.2.2" \
-    "phpmd/phpmd:^2.6"
+composer require --dev "jalogut/magento2-grumphp-conventions-checker:^2.2"
 ```
 
 ### Project
@@ -14,16 +11,22 @@ composer require --dev "jalogut/magento2-grumphp-conventions-checker:^2.2.0" \
 * Create `grumphp.yml` file in the root folder with the following content:
 
 ```
+parameters:
+    magento_dir: <magento_dir>
+    vendor_dir: <vendor_dir>
 imports:
-    - { resource: magento/vendor/jalogut/magento2-grumphp-conventions-checker/magento2-project-grumphp.yml }
+    - { resource: %vendor_dir%/jalogut/magento2-grumphp-conventions-checker/magento2-project-grumphp.yml }
 ```
 
 * Add the following scripts in your `composer.json`
 
 ```
   "scripts": {
-    "grumphpInitProject": "[ ! -e bin/grumphp ] || [ ! -e magento/vendor/jalogut/magento2-grumphp-conventions-checker ] || bin/grumphp git:init",
-    "grumphpInitModules": "[ ! -e bin/grumphp ] || [ ! -e magento/vendor/jalogut/magento2-grumphp-conventions-checker ] || find magento/vendor/<vendor>/* -type f -name grumphp.yml -maxdepth 1 -exec dirname {} \\; | xargs -I{} bash -c \"cd '{}' && ../../../../bin/grumphp git:init\"",
+    "grumphpInitProject": "[ ! -e bin/grumphp ] || [ ! -e <vendor_dir>/jalogut/magento2-grumphp-conventions-checker ] || bin/grumphp git:init",
+    "grumphpInitModules": "[ ! -e bin/grumphp ] || [ ! -e <vendor_dir>/jalogut/magento2-grumphp-conventions-checker ] || find <vendor_dir>/<company_vendor_name>/* -type f -name grumphp.yml -maxdepth 1 -exec dirname {} \\; | xargs -I{} bash -c \"cd '{}' && ../../../../bin/grumphp git:init\"",
+    "pre-autoload-dump": [
+        "mkdir -p <magento_dir>/app/etc && cp <vendor_dir>/magento/magento2-base/app/etc/NonComposerComponentRegistration.php <magento_dir>/app/etc/NonComposerComponentRegistration.php"
+    ],
     "post-install-cmd": [
       "@grumphpInitProject",
       "@grumphpInitModules"
@@ -35,14 +38,21 @@ imports:
   }
 ```
 
+**NOTE**: replace `<vendor_dir>`, `<company_vendor_name>` and `<magento_dir>` according to your configuration
+
 ### Magento Common Module
 
 * Create `grumphp.yml` file in the root folder with the following content:
 
 ```
+parameters:
+    magento_dir: <magento_dir>
+    vendor_dir: <vendor_dir>
 imports:
     - { resource: ../../jalogut/magento2-grumphp-conventions-checker/magento2-module-grumphp.yml }
 ```
+
+**NOTE**: replace `<vendor_dir>` and `<magento_dir>` according to your configuration
 
 ## Prerequisites
 

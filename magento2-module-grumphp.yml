@@ -1,5 +1,6 @@
 parameters:
     magento_dir: magento
+    vendor_dir: magento/vendor
     phpcs_excludes: test
     phpmd_excludes: <coma_separate_excludes>
     git_dir: .
@@ -20,7 +21,7 @@ parameters:
               - "exit;"
               - "console.log("
       phpcs:
-          standard: "../../../../%magento_dir%/vendor/jalogut/magento2-grumphp-conventions-checker/rules/PHP/phpcs/ruleset.xml"
+          standard: "../../../../%vendor_dir%/jalogut/magento2-grumphp-conventions-checker/rules/PHP/phpcs/ruleset.xml"
           tab_width: 4
           ignore_patterns: [%phpcs_excludes%]
       phpmd:
