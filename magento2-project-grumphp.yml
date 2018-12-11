@@ -23,7 +23,7 @@ parameters:
       phpcs:
           standard: "%vendor_dir%/jalogut/magento2-grumphp-conventions-checker/rules/PHP/phpcs/ruleset.xml"
           tab_width: 4
-          ignore_patterns: [%phpcs_excludes%]
+          ignore_patterns: ["%phpcs_excludes%"]
       phpmd:
-          exclude: [%phpmd_excludes%]
-          ruleset: [%magento_dir%/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml]
+          exclude: ["%phpmd_excludes%"]
+          ruleset: ["%magento_dir%/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"]
